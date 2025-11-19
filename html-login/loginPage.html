@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test login</title>
-    <link rel="stylesheet" href="loginPage.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
@@ -47,37 +47,24 @@
           />
 
           <span
-            onclick="togglePassword()"
-            style="
-              position: absolute;
-              transform: translateY(-50%);
-              cursor: pointer;
-            "
-          >
-            👁️
-          </span>
+          id="toggleIcon"
+          onclick="togglePassword()"
+          style="cursor: pointer; display: inline-block; width: 24px; height: 24px; vertical-align: middle;"
+        >
+          <!-- Icône initiale : œil barré -->
+          <svg width="24" height="24" viewBox="0 0 64 64">
+            <path d="M2,32 C12,12 52,12 62,32 C52,52 12,52 2,32 Z" stroke="black" stroke-width="2" fill="none"/>
+            <circle cx="32" cy="32" r="6" fill="black"/>
+            <line x1="8" y1="8" x2="56" y2="56" stroke="red" stroke-width="3"/>
+          </svg>
+        </span>
 
           <button type="submit">Login</button>
-          <!--<label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>>-->
         </div>
 
-        <div class="container" style="background-color: #f1f1f1">
-          <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
       </form>
     </main>
   </body>
 </html>
+<script src="script.js"></script>
 
-<script>
-  function togglePassword() {
-    const pwInput = document.getElementById("psw");
-    if (pwInput.type === "password") {
-      pwInput.type = "text";
-    } else {
-      pwInput.type = "password";
-    }
-  }
-</script>
