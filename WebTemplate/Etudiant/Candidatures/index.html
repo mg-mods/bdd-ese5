@@ -40,13 +40,11 @@
 </head>
 
 <body>
-    <!--Header-->
+
     <header>
         <div class="header-container">
             <div class="header-left">
-                <div class="header-logo">
-                    Bowl
-                </div>
+                <div class="header-logo">Bowl</div>
                 <nav>
                     <a href="#">Accueil</a>
                     <a href="#">Espace personnel</a>
@@ -56,27 +54,49 @@
             <button id="logoff" class="header-user">Déconnecter</button>
         </div>
     </header>
+<main>
+        <section class="filtres">
+            <input type="text" id="searchInput" placeholder="Rechercher une entreprise...">
 
-    <!--Contents-->
-    <main>
-    <body>
+            <select id="filtreStatut">
+                <option value="tous">Tous les statuts</option>
+                <option value="envoyée">Envoyée</option>
+                <option value="vue">Vue</option>
+                <option value="en cours">En cours</option>
+                <option value="acceptée">Acceptée</option>
+                <option value="refusée">Refusée</option>
+            </select>
+            
+            <button id="btnRetour" class="btn-retour">← Retour</button>
+        </section>
 
-
-        <!--
-        A mettre dans la prochaine page html profil.html -->
-        <div class="courses-grid">
-<h1> J'AIME LA CHATTE</h1>
-          
-       </body>
-
+        <section class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Entreprise</th>
+                        <th>Offre</th>
+                        <th>Date</th>
+                        <th>Statut</th>
+                        <th>Dossiers</th>
+                        <th>Tuteur</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableCandidatures">
+                    <!-- Généré par JS -->
+                </tbody>
+            </table>
+        </section>
     </main>
 
-    <!--Footer-->
+    
+
+
+    <!-- ✅ FOOTER -->
     <footer>
         <div class="footer-container">
-            <div class="footer-logo">
-                Bowl
-            </div>
+            <div class="footer-logo">Bowl</div>
             <nav>
                 <a href="https://wwwgeii.univ-lyon1.fr/">Mire GEII</a>
                 <a href="https://iut.univ-lyon1.fr/">IUT Lyon 1</a>
@@ -84,7 +104,7 @@
         </div>
     </footer>
 
-    <!--Modal for details pop-up; DO NOT EDIT text here: those are placeholders-->
+    <!-- ✅ POPUP (CONSERVÉ POUR PLUS TARD) -->
     <div class="modal" id="courseModal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
@@ -96,7 +116,7 @@
     </div>
 
 </body>
-
 </html>
+
 
 
