@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -39,6 +40,7 @@
 
 </head>
 
+
 <body>
     <!--Header-->
     <header>
@@ -57,37 +59,33 @@
         </div>
     </header>
 
-    <!--Contents-->
-    <main>
-    <body>
+<main>
+<div class="profil-wrapper">
 
+    <!-- ============================== -->
+    <!-- 🔵 CARTE PROFIL DYNAMIQUE -->
+    <!-- ============================== -->
+    <div class="course-card profil-large">
+        <img src="../mascol.png" alt="Picture">
 
-        <!--
-        A mettre dans la prochaine page html profil.html -->
-        <div class="profil-wrapper">
+        <div class="course-info-grid">
 
-            <!-- ✅ CARTE PROFIL ÉTUDIANT (PLUS LARGE) -->
-            <div class="course-card profil-large">
-                <img src="../mascol.png" alt="Picture">
-
-                <div class="course-info-grid">
-
-            <!-- ✅ COLONNE GAUCHE -->
+            <!-- Colonne gauche -->
             <div class="info-col-left">
-                <p>Nom : <span id="nom"></span></p>
-                <p>Prénom : <span id="prenom"></span></p>
-                <p>Âge : <span id="age"></span></p>
-                <p>Numéro étudiant : <span id="num_etudiant"></span></p>
-                <p>Code INE : <span id="codeINE"></span></p>
+                <p>Nom : <span id="nom"><?= htmlspecialchars($row['StudentLastName']) ?></span></p>
+                <p>Prénom : <span id="prenom"><?= htmlspecialchars($row['StudentFirstName']) ?></span></p>
+                <p>Âge : <span id="age"><?= $age ?></span></p>
+                <p>Numéro étudiant : <span id="num_etudiant"><?= htmlspecialchars($row['StudentAuthID']) ?></span></p>
+                <p>Code INE : <span id="codeINE"><?= htmlspecialchars($row['StudentIneCode']) ?></span></p>
             </div>
 
-            <!-- ✅ COLONNE DROITE -->
+            <!-- Colonne droite -->
             <div class="info-col-right">
-                <p>Parcours : <span id="parcours"></span></p>
-                <p>Adresse : <span id="adresse"></span></p>
-                <p>Aménagement : <span id="amenagement"></span></p>
-                <p>Téléphone : <span id="telephone"></span></p>
-                <p>Email : <span id="email"></span></p>
+                <p>Parcours : <span id="parcours"><?= htmlspecialchars($row['StudentBranch']) ?></span></p>
+                <p>Adresse : <span id="adresse"><?= htmlspecialchars($row['StudentAddress']) ?></span></p>
+                <p>Aménagement : <span id="amenagement"><?= htmlspecialchars($row['StudentAmenagement']) ?></span></p>
+                <p>Téléphone : <span id="telephone"><?= htmlspecialchars($row['StudentPhone']) ?></span></p>
+                <p>Email : <span id="email"><?= htmlspecialchars($row['StudentEmail']) ?></span></p>
             </div>
 
         </div>

@@ -1,20 +1,20 @@
 console.log("JS OK");
 
-// ✅ OBJET PROFIL (simulation en attendant la BDD)
+// Récupération depuis le HTML (déjà rempli par PHP)
 let profil = {
-    nom: "Durant",
-    prenom: "Anne-Sophie",
-    age: 22,
-    numero: "P2307582",
-    codeINE: "123664526BG",
-    parcours: "BUT3 GEII ESE ",
-    adresse: "12 avenue victor HUGO 69002 Lyon",
-    amenagement: "Tiers-temps",
-    telephone: "06 12 34 56 78",
-    email: "anne.durant@etu.univ-lyon1.fr"
+    nom: document.getElementById("nom").textContent,
+    prenom: document.getElementById("prenom").textContent,
+    age: document.getElementById("age").textContent,
+    numero: document.getElementById("num_etudiant").textContent,
+    codeINE: document.getElementById("codeINE").textContent,
+    parcours: document.getElementById("parcours").textContent,
+    adresse: document.getElementById("adresse").textContent,
+    amenagement: document.getElementById("amenagement").textContent,
+    telephone: document.getElementById("telephone").textContent,
+    email: document.getElementById("email").textContent
 };
 
-// ✅ FONCTION QUI AFFICHE LES INFOS DANS LA CARTE
+// Réaffiche dans la carte
 function afficherProfil() {
     document.getElementById("nom").textContent = profil.nom;
     document.getElementById("prenom").textContent = profil.prenom;
@@ -22,23 +22,18 @@ function afficherProfil() {
     document.getElementById("num_etudiant").textContent = profil.numero;
     document.getElementById("codeINE").textContent = profil.codeINE;
     document.getElementById("parcours").textContent = profil.parcours;
-
     document.getElementById("adresse").textContent = profil.adresse;
     document.getElementById("amenagement").textContent = profil.amenagement;
     document.getElementById("telephone").textContent = profil.telephone;
     document.getElementById("email").textContent = profil.email;
 }
 
-// ✅ PREMIER AFFICHAGE AU CHARGEMENT
-afficherProfil();
-
-// ✅ OUVERTURE DU POPUP
-document.getElementById("open-modifier").addEventListener("click", function (e) {
+// Ouvre popup
+document.getElementById("open-modifier").addEventListener("click", function(e){
     e.preventDefault();
 
     document.getElementById("popup").style.display = "flex";
 
-    // Pré-remplissage du formulaire
     document.getElementById("edit_nom").value = profil.nom;
     document.getElementById("edit_prenom").value = profil.prenom;
     document.getElementById("edit_age").value = profil.age;
@@ -51,15 +46,13 @@ document.getElementById("open-modifier").addEventListener("click", function (e) 
     document.getElementById("edit_email").value = profil.email;
 });
 
-// ✅ FERMETURE DU POPUP
-document.getElementById("close").addEventListener("click", function () {
+// Fermer popup
+document.getElementById("close").addEventListener("click", () => {
     document.getElementById("popup").style.display = "none";
 });
 
-// ✅ SAUVEGARDE DES MODIFICATIONS
-document.getElementById("save").addEventListener("click", function () {
-
-    // Mise à jour de l'objet profil
+// Enregistrer modifs
+document.getElementById("save").addEventListener("click", () => {
     profil.nom = document.getElementById("edit_nom").value;
     profil.prenom = document.getElementById("edit_prenom").value;
     profil.age = document.getElementById("edit_age").value;
@@ -71,9 +64,7 @@ document.getElementById("save").addEventListener("click", function () {
     profil.telephone = document.getElementById("edit_tel").value;
     profil.email = document.getElementById("edit_email").value;
 
-    // Réaffichage dans la carte
     afficherProfil();
 
-    // Fermeture du popup
     document.getElementById("popup").style.display = "none";
 });
