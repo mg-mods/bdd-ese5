@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+#profil {
+    width: 350px;
+    margin-left: 20px ;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+.profil-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px;
+}
+
+.info-eleve {
+    flex: 1;
+}
+
+.upload-cv {
+    flex: 1;
+    padding: 20px;
+    border: 2px dashed #a32e27;
+    border-radius: 10px;
+    background: #fff5f5;
+    text-align: center;
+}
+
+.upload-cv label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.upload-cv input[type="file"] {
+    cursor: pointer;
+}
+
+
+.profil-wrapper {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* ✅ Carte profil PLUS LARGE */
+.profil-large {
+    flex: 2;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+}
+
+/* ✅ Carte retour à droite */
+.retour-card {
+    flex: 0.25;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.btn-retour {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 18px 30px;
+    background: #a32e27;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* ✅ POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 320px;
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.course-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.info-col-left p,
+.info-col-right p {
+    margin: 8px 0;
+}
