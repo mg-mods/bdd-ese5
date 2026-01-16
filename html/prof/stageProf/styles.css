@@ -1,0 +1,125 @@
+/* ====== PAGE TITLE ====== */
+.page-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 30px 40px;
+    color: #222;
+}
+
+/* ====== LISTE DE STAGES ====== */
+.stage-list {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ====== CARTE D'UN STAGE ====== */
+.stage-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+    border-left: 6px solid #00abb8;
+
+    /* Ajouter le contour noir */
+    border: 2px solid black;
+    /* <--- contour noir autour de la carte */
+}
+
+.stage-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ====== PARTIE GAUCHE ====== */
+.stage-left h3 {
+    margin: 0 0 8px 0;
+    font-size: 22px;
+    color: #111;
+}
+
+.stage-left p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+}
+
+/* ====== PARTIE DROITE : BOUTONS ====== */
+.stage-right {
+    display: flex;
+    gap: 12px;
+}
+
+.details-stage {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Couleurs des boutons */
+.details-stage.view {
+    background: #3498db;
+    color: white;
+}
+
+.details-stage.edit {
+    background: #f1c40f;
+    color: black;
+}
+
+.details-stage.delete {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Hover */
+.details-stage:hover {
+    opacity: 0.85;
+}
+
+/* ====== BARRE DE RECHERCHE ====== */
+.search-container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+#stageSearch {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+}
+
+#stageSearch:focus {
+    border-color: #00abb8;
+    box-shadow: 0 0 5px rgba(0, 171, 184, 0.5);
+}
+/* Description cachée par défaut */
+.stage-description {
+    display: none;
+    margin-top: 10px;
+    color: #444;
+    font-size: 14px;
+}
+
+/* Mode grand : active la description et augmente le padding */
+.stage-card.expanded {
+    padding: 40px;
+}
+
+/* Affiche la description en mode grand */
+.stage-card.expanded .stage-description {
+    display: block;
+}

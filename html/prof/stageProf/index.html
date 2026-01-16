@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!--General Properties-->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Bowl - Espace stage</title>
+    <link rel='icon' type='icon' href='/favicon.ico' />
+    <meta property="Website Name" content="Bowl">
+    <meta property="Website Owners" content="IUT Lyon 1, Dept GEII">
+    <meta property="Website Administrator" content="IUT Lyon 1, Gr531 2025-26">
+    <meta property="Website Certificate" content="Self-signed">
+    <meta property="Website Version" content="v1.0">
+
+    <!--Embed Properties-->
+    <meta property="og:title" content="Bowl"> <!--Embeded Title-->
+    <meta property="og:site_name" content="Bowl"> <!--Embeded Source-->
+    <meta property="og:description" content="A bowl of moddles"> <!--Embeded Description-->
+    <meta property="og:image" content="/webhook.png"> <!--Embeded Image-->
+    <meta content="#00abb8" data-react-helmet="true" name="theme-color" /> <!--Embeded Color-->
+    <meta property="og:image:width" content="599">
+    <meta property="og:image:height" content="337">
+    <meta name="twitter:card" content="summary_large_image"> <!--Show large embed image-->
+    <meta property="og:url" content="/">
+    <meta property="og:type" content="website">
+    <meta name="keywords" content="Bowl, Bol, IUT, Lyon 1, Mire, GEII">
+
+    <!--Global Links-->
+    <link href="./localcommon/globalStyles.css" rel="stylesheet">
+    <link href="./localcommon/globalFonts.css" rel="stylesheet">
+    <script src="./localcommon/globalScripts.js"></script>
+
+    <!--Local Links-->
+    <link href="styles.css" rel="stylesheet">
+    <script src="scripts.js"></script>
+
+</head>
+
+<body>
+    <!--Header-->
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <div class="header-logo">
+                    Bowl
+                </div>
+                <nav>
+                    <a href="../testcoco/index.html">Accueil</a>
+                    <a href="#">Espace personnel</a>
+                    <a href="https://support.univ-lyon1.fr/" target="_blank">Support</a>
+                </nav>
+            </div>
+            <button id="logoff" class="header-user">Déconnecter</button>
+        </div>
+    </header>
+
+    <!--Contents-->
+    <main>
+        <h1 class="page-title">Liste des stages</h1>
+        <div class="search-container">
+            <input type="text" id="stageSearch" placeholder="Rechercher un stage...">
+        </div>
+
+        <div class="stage-list">
+
+            <div class="stage-card" data-title="Stage Développeur Web" data-subtitle="TechCorp • 6 mois • Lyon"
+                data-description="Participez au développement de nouvelles fonctionnalités pour notre plateforme web. Vous
+                            travaillerez en collaboration avec l’équipe front-end et back-end, apprendrez les bonnes
+                            pratiques du développement web et contribuerez à l’optimisation des performances du site."
+                data-button="Postuler" data-link="./conventionProf/">
+                <div class="stage-left">
+                    <h3>Stage Développeur Web</h3>
+                    <p>TechCorp • 6 mois • Lyon</p>
+
+                    <!-- Description avec sous-titre -->
+                    <div class="stage-description">
+                        <h4 class="desc-title">Description :</h4>
+                        <p>Participez au développement de nouvelles fonctionnalités pour notre plateforme web. Vous
+                            travaillerez en collaboration avec l’équipe front-end et back-end, apprendrez les bonnes
+                            pratiques du développement web et contribuerez à l’optimisation des performances du site.
+                        </p>
+                    </div>
+                </div>
+                <div class="stage-right">
+                    <a class="details-stage view">Voir</a>
+                </div>
+            </div>
+
+            <div class="stage-card" data-title="Stage Strip-teaser Homme"
+                data-subtitle="Badibo Inc. • 600 ans • Montcuq" data-description="Participez au développement de nouvelles dances pour notre partie dances privées. Vous
+                            travaillerez en collaboration avec l’équipe dances privées et le DJ, apprendrez les bonnes
+                            pratiques du strip-tease et contribuerez à l’optimisation des performances du site."
+                data-button="Postuler" data-link="./conventionProf/">
+                <div class="stage-left">
+                    <h3>Stage Strip-teaser Homme</h3>
+                    <p>Badibo Inc. • 600 ans • Montcuq</p>
+
+                    <!-- Description avec sous-titre -->
+                    <div class="stage-description">
+                        <h4 class="desc-title">Description :</h4>
+                        <p>Participez au développement de nouvelles dances pour notre partie dances privées. Vous
+                            travaillerez en collaboration avec l’équipe dances privées et le DJ, apprendrez les bonnes
+                            pratiques du strip-tease et contribuerez à l’optimisation des performances du site.
+                        </p>
+                    </div>
+                </div>
+                <div class="stage-right">
+                    <a class="details-stage view">Voir</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!--Footer-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                Bowl
+            </div>
+            <nav>
+                <a href="https://wwwgeii.univ-lyon1.fr/" target="_blank">Mire GEII</a>
+                <a href="https://iut.univ-lyon1.fr/" target="_blank">IUT Lyon 1</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!--Modal for details pop-up; DO NOT EDIT text here: those are placeholders-->
+    <div class="modal" id="stageModal">
+        <div style="width: 85%; height: 70%;" class="modal-content">
+            <span class="modal-close">&times;</span>
+            <p class="modal-title" id="modal-title">Title</p>
+            <p class="modal-subtitle" id="modal-subtitle">Subtitle</p>
+            <p class="modal-desc" id="modal-description">This is a description.</p>
+            <button class="modal-button" id="modal-button">Button</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

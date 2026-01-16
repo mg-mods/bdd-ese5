@@ -1,0 +1,61 @@
+.login-box {
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: sans-serif;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.login-box input:user-invalid[type="text"],
+.login-box input:user-invalid[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ff0000;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.login-box input:valid[type="text"],
+.login-box input:valid[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #00ff40;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.reveal-btn {
+    padding: 6px 10px;
+    border: 1px solid #aaa;
+    background: #eee;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.login-btn {
+    padding: 8px;
+    border: none;
+    background: #a32e27;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.error {
+    color: #b80000;
+    font-size: 14px;
+}
