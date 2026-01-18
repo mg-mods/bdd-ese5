@@ -1,34 +1,77 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ------------------------------
+       DROPDOWN MENU LOGIC
+    ------------------------------ */
+
+    const extras = document.querySelectorAll(".course-extra");
+
+    extras.forEach(extra => {
+        extra.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            // Close other open menus
+            document.querySelectorAll(".course-extra.active").forEach(open => {
+                if (open !== extra) open.classList.remove("active");
+            });
+
+            // Toggle this one
+            extra.classList.toggle("active");
+        });
+    });
+
+
+    /* ------------------------------
        MODAL LOGIC
     ------------------------------ */
 
-    const modal = document.getElementById("stageModal");
+    const modal = document.getElementById("courseModal");
     const closeBtn = document.querySelector(".modal-close");
 
-    const modalTitle = document.getElementById("modal-title");
-    const modalSubtitle = document.getElementById("modal-subtitle");
+    const modalTitle       = document.getElementById("modal-title");
+    const modalSubtitle    = document.getElementById("modal-subtitle");
     const modalDescription = document.getElementById("modal-description");
-    const modalButton = document.getElementById("modal-button");
+    const modalButton    = document.getElementById("modal-button");
 
-    // Every "Details" button inside stage menus
-    const detailsButtons = document.querySelectorAll(".details-stage");
+    // Every "Details" button inside course menus
+    const detailsButtons = document.querySelectorAll(".details-course");
+    const card = document.querySelectorAll(".course-card");
 
     detailsButtons.forEach(btn => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
 
-            const card = btn.closest(".stage-card");
+            const card = btn.closest(".course-card");
 
-            modalTitle.textContent = card.dataset.title;
-            modalSubtitle.textContent = card.dataset.subtitle;
+            modalTitle.textContent       = card.dataset.title;
+            modalSubtitle.textContent    = card.dataset.subtitle;
             modalDescription.textContent = card.dataset.description;
-            modalButton.textContent = card.dataset.button;
+            modalButton.textContent    = card.dataset.button;
 
             modal.style.display = "flex";
 
+            // Close dropdown
+            card.querySelector(".course-extra").classList.remove("active");
+        });
+    });
+
+    card.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const card = btn.closest(".course-card");
+
+            modalTitle.textContent       = card.dataset.title;
+            modalSubtitle.textContent    = card.dataset.subtitle;
+            modalDescription.textContent = card.dataset.description;
+            modalButton.textContent    = card.dataset.button;
+
+            modal.style.display = "flex";
+
+            // Close dropdown
+            card.querySelector(".course-extra").classList.remove("active");
         });
     });
 
@@ -43,5 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-});
+    /* ------------------------------
+       GLOBAL CLICK = CLOSE MENUS
+    ------------------------------ */
 
+    document.addEventListener("click", () => {
+        document.querySelectorAll(".course-extra.active")
+            .forEach(el => el.classList.remove("active"));
+    });
+
+});

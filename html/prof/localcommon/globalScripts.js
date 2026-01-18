@@ -35,8 +35,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Every "Details" button inside course menus
     const detailsButtons = document.querySelectorAll(".details-course");
+    const card = document.querySelectorAll(".course-card");
 
     detailsButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const card = btn.closest(".course-card");
+
+            modalTitle.textContent       = card.dataset.title;
+            modalSubtitle.textContent    = card.dataset.subtitle;
+            modalDescription.textContent = card.dataset.description;
+            modalButton.textContent    = card.dataset.button;
+
+            modal.style.display = "flex";
+
+            // Close dropdown
+            card.querySelector(".course-extra").classList.remove("active");
+        });
+    });
+
+    card.forEach(btn => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();

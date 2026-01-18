@@ -1,0 +1,52 @@
+.entr_welcome_btn_grid {
+    height: 550px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.entr_welcome_btn_container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    position: relative;
+}
+
+.entr_welcome_btn_grid nav {
+    display: flex;
+    gap: 50px;
+    margin: 0 auto;
+}
+
+.entr_welcome_btn {
+    color: #a32d278a;
+    font-size: 3rem;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.entr_welcome_btn::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: #a32e27;
+    transition: width 0.3s ease;
+}
+
+.entr_welcome_btn:hover {
+    color: #a32e27;
+    transform: scale(1.05);
+}
+
+.entr_welcome_btn:hover::before {
+    width: 100%;
+}

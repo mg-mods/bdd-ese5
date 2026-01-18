@@ -1,0 +1,119 @@
+erDiagram
+
+    STUDENTS {
+        int StudentID PK
+        string StudentLastName
+        string StudentFirstName
+        string StudentGender
+        string StudentIneCode
+        string StudentUnivID "FK -> FAKESTUDENTS.FakeStudentID"
+        string StudentEmail
+        string StudentPhone
+        string StudentPhoneIndicator
+        string StudentCourse
+        int StudentStartYear
+        string StudentHash
+    }
+
+    FAKESTUDENTS {
+        string FakeStudentID PK
+        string FakeStudentPwd
+        string FakeStudentEmail
+        string FakeStudentPhone
+    }
+
+    COMPANIES {
+        int CompanyID PK
+        string CompanyName
+        string CompanyDomain
+        date CompanyCreationDate
+        int CompanyContactID "FK -> CONTACTS.ContactID"
+        string CompanyHash
+    }
+
+    CONTACTS {
+        int ContactID PK
+        string ContactLastName
+        string ContactFirstName
+        string ContactGender
+        string ContactEmail
+        string ContactPhone
+        string ContactPosition
+    }
+
+    OFFERS {
+        int OfferID PK
+        string OfferName
+        string OfferType
+        string OfferCity
+        string OfferPostal
+        string OfferAddress
+        int OfferCompanyID "FK -> COMPANIES.CompanyID"
+        float OfferCoordsLng
+        float OfferCoordsLat
+        date OfferCreationDate
+        date OfferStartDate
+        date OfferEndDate
+        string OfferFileName
+        string OfferFilePath
+    }
+
+    APPLICATIONS {
+        int ApplicationID PK
+        date ApplicationCreationDate
+        int ApplicationStudentID "FK -> STUDENTS.StudentID"
+        int ApplicationOfferID "FK -> OFFERS.OfferID"
+        int ApplicationResumeID "FK -> RESUMES.ResumeID"
+        int ApplicationStatus
+        string ApplicationFileName
+        string ApplicationFilePath
+    }
+
+    RESUMES {
+        int ResumeID PK
+        date ResumeCreationDate
+        int ResumeStudentID "FK -> STUDENTS.StudentID"
+        string ResumeFileName
+        string ResumeFilePath
+    }
+
+    CONTRACTS {
+        int ContractID PK
+        date ContractCreationDate
+        int ContractStudentID "FK -> STUDENTS.StudentID"
+        int ContractCompanyID "FK -> COMPANIES.CompanyID"
+        int ContractOfferID "FK -> OFFERS.OfferID"
+        int ContractApplicationID "FK -> APPLICATIONS.ApplicationID"
+        int ContractTeacherID "FK -> TEACHERS.TeacherID"
+        string ContractURL
+    }
+
+    TEACHERS {
+        int TeacherID PK
+        string TeacherLastName
+        string TeacherFirstName
+        string TeacherGender
+        string TeacherEmail
+        string TeacherDept
+        string TeacherHash
+    }
+
+    %% =====================
+    %% TABLE RELATIONSHIPS
+    %% =====================
+
+    STUDENTS ||--|| FAKESTUDENTS : CAS_identity
+
+    STUDENTS ||--o{ APPLICATIONS : submits
+    OFFERS ||--o{ APPLICATIONS : receives
+    RESUMES ||--|| APPLICATIONS : attached
+    STUDENTS ||--o{ RESUMES : owns
+
+    COMPANIES ||--o{ OFFERS : publishes
+    CONTACTS ||--|| COMPANIES : contact
+
+    STUDENTS ||--o{ CONTRACTS : signs
+    COMPANIES ||--o{ CONTRACTS : signs
+    OFFERS ||--o{ CONTRACTS : originates
+    APPLICATIONS ||--o{ CONTRACTS : originates
+    TEACHERS ||--o{ CONTRACTS : validates
