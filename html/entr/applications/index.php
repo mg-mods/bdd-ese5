@@ -1,55 +1,62 @@
-<?php
-session_start();
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bowl – Candidatures</title>
 
-if ((!isset($_SESSION['isLoggedIn']) || $_SESSION['isLoggedIn'] !== true) && $_SESSION['loginType'] == "stud") {
-    header("Location: /cas?service=http://192.168.56.101/testStud/");
-    exit;
-}
+    <!-- Common -->
+    <link rel="stylesheet" href="/Common/styles.css">
+    <script src="/Common/scripts.js" defer></script>
 
-try {
-    $sessionToken = $_SESSION['sessionToken'];
+    <!-- Page -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
 
-    $pdo = new PDO("mysql:host=localhost;dbname=Master;charset=utf8", "admin", "admin");
+<header>
+    <div class="header-container">
+        <div class="header-left">
+            <div class="header-logo">Bowl</div>
+            <nav>
+                <a href="#">Offres</a>
+                <a href="#">Candidatures</a>
+            </nav>
+        </div>
+        <button class="header-user">Déconnexion</button>
+    </div>
+</header>
 
-    $sql = file_get_contents("./SQL/getUserInfo.SQL");
+<main>
+    <div class="courses-grid" id="applicationsGrid"></div>
+</main>
 
-    $sql = str_replace("{{ hashInput.value }}", $pdo->quote($sessionToken), $sql);
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">Bowl</div>
+    </div>
+</footer>
 
-    $stmt = $pdo->query($sql);
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+<!-- Modal -->
+<div class="modal" id="courseModal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
 
-    echo json_encode([
-        "success" => true,
-        "StudentID" => $row['StudentID'],
-        "StudentUnivID" => $row['StudentUnivID'],
-        "StudentLastName" => $row['StudentLastName'],
-        "StudentFirstName" => $row['StudentFirstName'],
-        "StudentGender" => $row['StudentGender'],
-        "StudentIneCode" => $row['StudentIneCode'],
-        "StudentEmail" => $row['StudentEmail'],
-        "StudentPhone" => $row['StudentPhone'],
-        "StudentPhoneIndicator" => $row['StudentPhoneIndicator'],
-        "StudentCourse" => $row['StudentCourse'],
-        "StudentStartYear" => $row['StudentStartYear']
-    ]);
+        <h1 class="modal-title" id="modal-title"></h1>
+        <h2 class="modal-subtitle" id="modal-subtitle"></h2>
+        <p class="modal-desc" id="modal-description"></p>
 
+        <a id="modal-resume" class="modal-button" target="_blank" style="display:none;">
+            Télécharger le CV
+        </a>
 
-} catch (Exception $e) {
-    echo json_encode([
-        "success" => false,
-        "StudentID" => null,
-        "StudentUnivID" => null,
-        "StudentLastName" => null,
-        "StudentFirstName" => null,
-        "StudentGender" => null,
-        "StudentIneCode" => null,
-        "StudentEmail" => null,
-        "StudentPhone" => null,
-        "StudentPhoneIndicator" => null,
-        "StudentCourse" => null,
-        "StudentStartYear" => null
-    ]);
-}
+        <div class="modal-actions">
+            <button id="modal-reject" class="modal-button">Rejeter</button>
+            <button id="modal-contact" class="modal-button">Contacter</button>
+            <button id="modal-accept" class="modal-button">Accepter</button>
+        </div>
+    </div>
+</div>
 
-
-?>
+</body>
+</html>

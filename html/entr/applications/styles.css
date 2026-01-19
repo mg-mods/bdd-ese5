@@ -1,0 +1,17 @@
+/* Application status indicator */
+.status-dot {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #999;
+    background: white;
+}
+
+.status-0 { background: white; }      /* nouvelle */
+.status-1 { background: #9e9e9e; }    /* en cours */
+.status-3 { background: #d32f2f; }    /* refusée */
+.status-4 { background: #1976d2; }    /* contactée */
+.status-5 { background: #388e3c; }    /* acceptée */
