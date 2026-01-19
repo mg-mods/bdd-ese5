@@ -14,8 +14,16 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-h2 {
-    text-align: center;
+
+/* Nouveau style pour le titre au-dessus des cartes */
+.titre-espace {
+    text-align: center;       /* Centre le texte horizontalement */
+    font-size: 2.5rem;        /* Taille du texte (assez gros) */
+    color: #333;              /* Couleur gris foncé (ou #a32e27 pour rouge bordeaux) */
+    margin-top: 40px;         /* Espace au-dessus du titre */
+    margin-bottom: 10px;      /* Petit espace entre le titre et les cartes */
+    font-weight: bold;        /* Texte en gras */
+    text-transform: uppercase; /* Optionnel : met tout en majuscules */
 }
 
 .offres-container {
@@ -29,30 +37,7 @@ h2 {
     background: #f8f8f8;
 }
 
-/* Style d’une offre 
-.offre {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 12px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-}
 
-.offre:hover {
-    transform: scale(1.02);
-}
-
-.offre button {
-    margin-top: 10px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: none;
-    background-color: #00abb8;
-    color: white;
-    cursor: pointer;
-}
-*/
 /* Styles pour les 3 grosses cases-boutons */
 .action-cards {
     display: flex;
@@ -95,3 +80,4 @@ h2 {
     .action-cards { flex-direction: column; gap: 14px; padding: 16px; }
     .action-card { width: 100%; max-width: none; height: 120px; }
 }
+

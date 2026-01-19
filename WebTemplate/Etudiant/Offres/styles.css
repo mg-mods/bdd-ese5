@@ -69,7 +69,10 @@ body {
 
 /* NAVIGATION / RETOUR (25% hauteur) */
 .retour-card {
-    flex: 0 0 25%; /* 25% hauteur */
+    display: flex;
+    flex: 0 0 25%;
+    align-items: center;
+    flex-direction: column;
     background: white;
     border-radius: 12px;
     padding: 20px;
@@ -77,8 +80,8 @@ body {
 }
 
 .btn-retour {
-    display: inline-block;
-    padding: 12px 24px;
+    display : inline-block;
+    padding: 12px  50px;
     background: #a32e27;
     color: white;
     text-decoration: none;
@@ -86,6 +89,25 @@ body {
     margin-top: 20px;
 }
 
+.btn-Profil {
+    display : inline-block;
+    padding: 12px 55px;
+    background: #a32e27;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.btn-Candida {
+    display : inline-block;
+    padding: 12px 25px;
+    background: #a32e27;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
 /* CARTE (75% hauteur) */
 .carte-container {
     flex: 1; /* prend le reste, 75% */
