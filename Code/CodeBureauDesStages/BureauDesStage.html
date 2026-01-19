@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Tableau de Bord - Gestion Conventions</title>
+    
+    <link href="./localcommon/globalStyles.css" rel="stylesheet">
+    <link href="./localcommon/globalFonts.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+  
+
+    </head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <div class="header-logo">Bowl</div>
+                <nav>
+                    <a href="#">Acceuil</a> 
+                    <a href="#">Espace personnel</a>
+                    <a href="https://support.univ-lyon1.fr/" target="_blank">Support</a>
+                </nav>
+            </div>
+            <button id="logoff" class="header-user">Déconnecter</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-container">
+            
+            <div id="sidebar" class="sidebar">
+                <div class="sidebar-title">
+                    Bureau des stages
+                </div>
+                <div class="sidebar-content">
+                    <button onclick="window.location.href='#'">
+                        Tableau de Bord
+                    </button>
+                    
+                    <button onclick="window.location.href='conventions.php'">
+                        Accéder aux Conventions
+                    </button>
+
+                    <button onclick="window.location.href='tuteurs.php'">
+                        Gérer les Tuteurs
+                    </button>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <h2>Tableau de Bord Principal</h2>
+                <p>Bienvenue sur l'interface de gestion. Utilisez le menu latéral pour naviguer.</p>
+                
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">Bowl</div>
+            <nav>
+                <a href="https://wwwgeii.univ-lyon1.fr/">Mire GEII</a>
+                <a href="https://iut.univ-lyon1.fr/">IUT Lyon 1</a>
+            </nav>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+    <script src="localcommon/globalScripts.js"></script>
+</body>
+</html>

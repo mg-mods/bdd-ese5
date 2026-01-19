@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Gestion des Conventions</title>
+    
+    <link href="./localcommon/globalStyles.css" rel="stylesheet">
+    <link href="./localcommon/globalFonts.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <div class="header-logo">Bowl</div>
+                <nav>
+                    <a href="conventions.php">Acceuil</a> 
+                    <a href="#">Espace personnel</a>
+                    <a href="https://support.univ-lyon1.fr/" target="_blank">Support</a>
+                </nav>
+            </div>
+            <button id="logoff" class="header-user">Déconnecter</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-container">
+            
+            <div id="sidebar" class="sidebar">
+                <div class="sidebar-title">
+                    Bureau des stages
+                </div>
+                <div class="sidebar-content">
+                    
+                    <button onclick="window.location.href='BureauDesStage.html'">
+                        Tableau de Bord
+                    </button>
+
+                    <button onclick="window.location.href='#'">
+                        Accéder aux Conventions
+                    </button>
+
+                    <button onclick="window.location.href='tuteurs.php'">
+                        Gérer les Tuteurs
+                    </button>
+                </div>
+            </div>
+
+            <div class="main-content">
+                
+                <h2>Liste des Conventions</h2>
+
+                <div id="search-filter-area" style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 4px; background-color: #fcfcfc;">
+                     <form method="GET" action="conventions.php" id="filter-form">
+                        <input type="text" name="search_name" placeholder="Rechercher">
+                        <button type="submit">Rechercher</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filtre : <select name="status" id="statut-select">
+                    <option value="">Aucun</option>
+                    <option value="En_attente_de_validation">En_attente_de_validation</option>
+                    <option value="En_attente_de_tuteur">En_attente_de_tuteur</option>
+                    <option value="Validé">Validé</option>
+                    <option value="Refusé">Refusé</option>
+                </select>
+                     </form>
+                
+
+                </div>
+                
+               <ul class="convention-list-header" style="list-style: none; padding: 0; margin: 0; display: flex; font-weight: bold; border-bottom: 2px solid #333; padding-bottom: 5px;">
+                    <li style="width: 35%;">Élève</li>
+                    <li style="width: 45%;">Statut</li>
+               </ul>
+
+                <div style="height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 3px;">
+                 <ul id="result-list" style="list-style: none; padding: 0;">
+                </ul>
+                </div>
+                <div style="margin-top: 20px;">
+                    {NO_RESULTS_MESSAGE}
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="select-tutor-modal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="close-button" id="close-select-tutor-modal">&times;</span>
+            <h3 id="select-tutor-modal-title">Sélectionner un Tuteur pour la Convention</h3>
+            
+            <form id="select-tutor-form" style="margin-bottom: 15px; display: flex; gap: 10px;">
+                <input type="text" id="tutor-search-input" placeholder="Rechercher par nom..." style="padding: 8px; flex-grow: 1;">
+                <button type="submit" class="action-button blue-bg">Rechercher</button>
+            </form>
+
+            <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ddd; padding: 5px;">
+                <ul id="non-tutor-list" style="list-style: none; padding: 0;">
+                    <li style="text-align: center; color: #777;">Recherchez un Tuteur ou attendez le chargement initial.</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 15px; font-size: 0.9em; color: #555;">* Cliquez sur le nom pour attribuer ce Tuteur à la convention en cours.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">Bowl</div>
+            <nav>
+                <a href="https://wwwgeii.univ-lyon1.fr/">Mire GEII</a>
+                <a href="https://iut.univ-lyon1.fr/">IUT Lyon 1</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="localcommon/globalScripts.js"></script>
+    <script src="utils/recherche.js"></script> 
+
+
+
+
+    <div id="convention-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        
+        <h3 id="modal-title">Convention #<span id="modal-convention-id"></span></h3>
+        
+        <div id="pdf-viewer-container" style="height: 500px; border: 1px solid #ccc; margin-bottom: 15px;">
+            </div>
+
+        <div id="modal-actions" style="text-align: center;">
+            <button id="btn-accept" data-id="" class="action-button green-bg">Accepter</button>
+            <button id="btn-refuse" data-id="" class="action-button red-bg">Refuser</button>
+            <button id="btn-assign-tutor" data-id="" class="action-button blue-bg">Attribuer Tuteur</button>
+            <button id="btn-assign-tutor2" data-id="" class="action-button blue-bg">Changer Tuteur</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
