@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+#profil {
+    width: 350px;
+    margin-left: 20px ;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+/* Nouveau style pour le titre au-dessus des cartes */
+.titre-espace {
+    text-align: center;       /* Centre le texte horizontalement */
+    font-size: 2.5rem;        /* Taille du texte (assez gros) */
+    color: #333;              /* Couleur gris foncé (ou #a32e27 pour rouge bordeaux) */
+    margin-top: 40px;         /* Espace au-dessus du titre */
+    margin-bottom: 10px;      /* Petit espace entre le titre et les cartes */
+    font-weight: bold;        /* Texte en gras */
+    text-transform: uppercase; /* Optionnel : met tout en majuscules */
+}
+
+.offres-container {
+    width: 400px;    
+    margin-left: 320px ;           /* largeur du bloc */
+    max-height: 200px;          /* limite de hauteur visible */
+    overflow-y: auto;           /* permet le scroll à la molette */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #00abb8;
+    background: #f8f8f8;
+}
+
+
+/* Styles pour les 3 grosses cases-boutons */
+.action-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    padding: 24px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.action-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0;
+    min-width: 200px;
+    max-width: 380px;
+    height: 140px;
+    background: linear-gradient(180deg, #a32e27 0%, #a32e27 100%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    -webkit-text-stroke: 1px black; /* largeur et couleur du contour */
+    transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s;
+    text-align: center;
+}
+
+.action-card:hover,
+.action-card:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+    opacity: 0.98;
+}
+
+@media (max-width: 900px) {
+    .action-cards { flex-direction: column; gap: 14px; padding: 16px; }
+    .action-card { width: 100%; max-width: none; height: 120px; }
+}
+

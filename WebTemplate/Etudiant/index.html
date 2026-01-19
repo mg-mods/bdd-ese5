@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!--General Properties-->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Bowl</title>
+    <link rel='icon' type='icon' href='/favicon.ico' />
+    <meta property="Website Name" content="Bowl">
+    <meta property="Website Owners" content="IUT Lyon 1, Dept GEII">
+    <meta property="Website Administrator" content="IUT Lyon 1, Gr531 2025-26">
+    <meta property="Website Certificate" content="Self-signed">
+    <meta property="Website Version" content="v1.0">
+
+    <!--Embed Properties-->
+    <meta property="og:title" content="Bowl"> <!--Embeded Title-->
+    <meta property="og:site_name" content="Bowl"> <!--Embeded Source-->
+    <meta property="og:description" content="A bowl of moddles"> <!--Embeded Description-->
+    <meta property="og:image" content="/webhook.png"> <!--Embeded Image-->
+    <meta content="#00abb8" data-react-helmet="true" name="theme-color" /> <!--Embeded Color-->
+    <meta property="og:image:width" content="599">
+    <meta property="og:image:height" content="337">
+    <meta name="twitter:card" content="summary_large_image"> <!--Show large embed image-->
+    <meta property="og:url" content="/">
+    <meta property="og:type" content="website">
+    <meta name="keywords" content="Bowl, Bol, IUT, Lyon 1, Mire, GEII">
+
+    <!--Global Links-->
+    <link href="localcommon/globalStyles.css" rel="stylesheet">  <!--rajouter les ./--> 
+    <link href="localcommon/globalFonts.css" rel="stylesheet"> <!--rajouter les ./--> 
+    <script src="localcommon/globalScripts.js"></script>       <!--rajouter les ./--> 
+
+    <!--Local Links-->
+    <link href="styles.css" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+
+</head>
+
+<body>
+    <!--Header-->
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <div class="header-logo">
+                    Bowl
+                </div>
+                <nav>
+                    <a href="#">Accueil</a>
+                    <a href="#">Espace personnel</a>
+                    <a href="https://support.univ-lyon1.fr/" target="_blank">Support</a>
+                </nav>
+            </div>
+            <button id="logoff" class="header-user">Déconnecter</button>
+        </div>
+    </header>
+  </header>
+    <!--Contents-->
+    <main>
+    <body>
+        <h1 class="titre-espace">Espace Étudiant</h1>
+
+        <!-- Trois grosses cases-boutons côte à côte -->
+        <section class="action-cards" aria-label="Navigation rapide">
+            <a class="action-card" id="profil-card" href="Profil/index.html">Profil</a>
+            <a class="action-card" id="offres-card" href="Offres/index.html">Offres</a>
+            <a class="action-card" id="candidature-card" href="Candidatures/index.html">Candidature</a>
+        </section>
+
+       </body>
+
+    </main>
+
+    <!--Footer-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                Bowl
+            </div>
+            <nav>
+                <a href="https://wwwgeii.univ-lyon1.fr/">Mire GEII</a>
+                <a href="https://iut.univ-lyon1.fr/">IUT Lyon 1</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!--Modal for details pop-up; DO NOT EDIT text here: those are placeholders-->
+    <div class="modal" id="courseModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <p class="modal-title" id="modal-title">Title</p>
+            <p class="modal-subtitle" id="modal-subtitle">Subtitle</p>
+            <p class="modal-desc" id="modal-description">This is a description.</p>
+            <button class="modal-button" id="modal-button">Button</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
