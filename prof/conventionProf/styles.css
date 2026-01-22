@@ -1,0 +1,114 @@
+/* ====== PAGE TITLE ====== */
+.page-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 30px 40px;
+    color: #222;
+}
+
+/* ====== LISTE DES CONVENTIONS ====== */
+.conv-list {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ====== CARTE DE CONVENTION ====== */
+.conv-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 2px solid black;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.conv-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Contenu gauche (infos de la convention) */
+.conv-left {
+    flex: 1;
+}
+
+/* Infos principales */
+.conv-left p {
+    margin: 5px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+/* Nom de l'étudiant en gras */
+.conv-left .student-name {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+/* Titre du stage en italique */
+.conv-left .stage-title {
+    font-style: italic;
+    color: #555;
+}
+
+/* Description cachée par défaut */
+.conv-description {
+    display: none;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    color: #444;
+    font-size: 14px;
+}
+
+.conv-description .desc-title {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Mode grand : affiche description */
+.conv-card.expanded .conv-description {
+    display: block;
+}
+
+/* Bouton Télécharger à droite */
+.conv-right {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.btn.download {
+    background: #3498db;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn.download:hover {
+    opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .conv-card {
+        flex-direction: column;
+    }
+    .conv-right {
+        margin-left: 0;
+        margin-top: 15px;
+        align-items: flex-start;
+    }
+}

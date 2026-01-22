@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bowl - Conventions de stage</title>
+    <link href="./localcommon/globalStyles.css" rel="stylesheet">
+    <link href="./localcommon/globalFonts.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="conventions.css" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <div class="header-logo">Bowl</div>
+                <nav>
+                    <a href="../testcoco/index.html">Accueil</a>
+                    <a href="#">Espace personnel</a>
+                    <a href="https://support.univ-lyon1.fr/" target="_blank">Support</a>
+                </nav>
+            </div>
+            <button id="logoff" class="header-user">Déconnecter</button>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="page-title">Conventions de stage</h1>
+
+        <!-- Barre de recherche -->
+        <div class="search-container" style="width:90%; margin:20px auto;">
+            <input type="text" id="convSearch" placeholder="Rechercher par étudiant, entreprise ou titre..."
+                style="width:100%; padding:12px 16px; font-size:16px; border-radius:12px; border:1px solid #ccc;">
+        </div>
+
+        <div class="conv-list">
+
+            <div class="conv-card">
+                <div class="conv-left">
+                    <p class="student-name">Étudiant : Alice Dupont</p>
+                    <p class="company-name">Entreprise : TechCorp</p>
+                    <p class="stage-title">Titre du stage : Développeur Web</p>
+                    <div class="conv-description">
+                        <h4 class="desc-title">Description :</h4>
+                        <p>Cette convention détaille les missions du stage en développement web, les objectifs
+                            pédagogiques et les obligations de l’étudiant et de l’entreprise.</p>
+                    </div>
+                </div>
+                <div class="conv-right">
+                    <a href="/conventions/techcorp.pdf" class="btn download" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 16 16"
+                            fill="#000000">
+                            <g fill="#FFFFFF">
+                                <path d="M9 7.826V1H7v6.826L4.392 5.59L3.09 7.108L8 11.318l4.91-4.21l-1.302-1.518z" />
+                                <path d="M3 13v-3H1v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3h-2v3z" />
+                            </g>
+                        </svg> Convention</a>
+                </div>
+            </div>
+
+            <div class="conv-card">
+                <div class="conv-left">
+                    <p class="student-name">Étudiant : Louis Martin</p>
+                    <p class="company-name">Entreprise : ElectroSys</p>
+                    <p class="stage-title">Titre du stage : Électronique embarquée</p>
+                    <div class="conv-description">
+                        <h4 class="desc-title">Description :</h4>
+                        <p>Cette convention précise les missions liées à l’électronique embarquée, le cadre légal du
+                            stage et les engagements de l’étudiant et de l’entreprise.</p>
+                    </div>
+                </div>
+                <div class="conv-right">
+                    <a href="/conventions/electrosys.pdf" class="btn download" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 16 16"
+                            fill="#000000">
+                            <g fill="#FFFFFF">
+                                <path d="M9 7.826V1H7v6.826L4.392 5.59L3.09 7.108L8 11.318l4.91-4.21l-1.302-1.518z" />
+                                <path d="M3 13v-3H1v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3h-2v3z" />
+                            </g>
+                        </svg> Convention</a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">Bowl</div>
+            <nav>
+                <a href="https://wwwgeii.univ-lyon1.fr/" target="_blank">Mire GEII</a>
+                <a href="https://iut.univ-lyon1.fr/" target="_blank">IUT Lyon 1</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>
